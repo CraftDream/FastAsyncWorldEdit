@@ -77,6 +77,10 @@ public class WorldGuardFeature extends BukkitMaskManager implements Listener {
      * blacklisted regions for the world.
      */
     public Set<ProtectedRegion> getRegions(LocalPlayer player, Location location, boolean isWhitelist) {
+		String worldName = location.getWorld().getName();
+        if (!("lobby".equals(worldName) || "world".equals(worldName) || "plot".equals(worldName) || "othertree".equals(worldName))) {
+            return Collections.emptySet();
+        }
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         if (container == null) {
             LOGGER.info("Region capability is not enabled for WorldGuard.");
