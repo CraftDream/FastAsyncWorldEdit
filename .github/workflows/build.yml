@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build:
-    if: github.repository_owner == 'IntellectualSites'
+    if: github.repository_owner == 'CraftDream'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
