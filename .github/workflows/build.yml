@@ -18,6 +18,8 @@ jobs:
           distribution: temurin
           cache: gradle
           java-version: 17
+      - name: Clean Build
+        run: ./gradlew clean build
       - name: Determine release status
         if: ${{ runner.os == 'Linux' }}
         run: |
